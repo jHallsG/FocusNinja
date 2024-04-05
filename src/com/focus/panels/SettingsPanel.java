@@ -14,10 +14,12 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 
 import com.focus.components.Components;
+import com.focus.functions.ButtonFunctions;
 
 public class SettingsPanel {
 
 	public static JPanel settings() {
+		
 		JPanel settings = new JPanel();
 		settings.setLayout(new GridBagLayout());
 		settings.setPreferredSize(new Dimension(400, 600));
@@ -45,25 +47,33 @@ public class SettingsPanel {
 		JLabel round = new JLabel("Rounds");
 		round.setFont(new Font("Verdana", Font.BOLD, 12));
 
-		JLabel roundValue = new JLabel("3:00");
+		JLabel roundValue = new JLabel("3");
 		
-		JSlider workDurationSlider = new JSlider(1, 60, 25);
+		JSlider workDurationSlider = new JSlider(1, 30, 25);
+		workDurationSlider.addChangeListener(new ButtonFunctions(workDurationVal, workDurationSlider));
+		Components.setWorkDuration(workDurationSlider);
 
+		
 		JSlider shortBreakSlider = new JSlider(1, 15, 5);
+		shortBreakSlider.addChangeListener(new ButtonFunctions(shortBreakVal, shortBreakSlider));
+		Components.setShortBreak(shortBreakSlider);
 
 		JSlider longBreakSlider = new JSlider(1, 30, 15);
+		longBreakSlider.addChangeListener(new ButtonFunctions(longBreakVal, longBreakSlider));
+		Components.setLongBreak(longBreakSlider);
 
 		JSlider roundsSlider = new JSlider(1, 10, 3);
+		roundsSlider.addChangeListener(new ButtonFunctions(roundValue, roundsSlider));
+		Components.setRounds(roundsSlider);
 
 		JButton reset = new JButton("Reset");
+		reset.addActionListener(new ButtonFunctions(workDurationSlider, shortBreakSlider, longBreakSlider, roundsSlider, "reset"));
 
-		// body.setBackground(Color.green);
-
-		Component comp[] = { workDuration, workDurationVal, workDurationSlider, shortBreak, shortBreakVal,
+		Component comps[] = { workDuration, workDurationVal, workDurationSlider, shortBreak, shortBreakVal,
 				shortBreakSlider, longBreak, longBreakVal, longBreakSlider, round, roundValue, roundsSlider,
 				Box.createVerticalStrut(60), reset };
 
-		for (Component component : comp) {
+		for (Component component : comps) {
 			settings.add(component, gbc);
 			gbc.gridy++;
 		}

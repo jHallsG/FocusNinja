@@ -3,10 +3,8 @@ package com.focus.components;
 import javax.swing.JSlider;
 
 public class Components {
-	static JSlider workDuration = new JSlider(1, 60, 25);
-	static JSlider shortBreak = new JSlider(1, 15, 5);
-	static JSlider longBreak = new JSlider(1, 30, 15);
-	static JSlider rounds = new JSlider(1, 10, 3);
+	private static JSlider workDuration, shortBreak, longBreak, rounds;
+
 
 	public static JSlider getWorkDuration() {
 		return workDuration;

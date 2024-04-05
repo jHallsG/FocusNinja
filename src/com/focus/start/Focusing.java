@@ -10,7 +10,7 @@ public class Focusing {
 
 	public static void main(String[] args) {
 		
-		MainBody main = new MainBody();
+		MainBody body = new MainBody();
 
 		JFrame mainWindow = new JFrame();
 		mainWindow.setTitle("Pomodoro Focus Ninja");
@@ -20,9 +20,9 @@ public class Focusing {
 		mainWindow.setResizable(false);
 		mainWindow.setLocationRelativeTo(null);
 		
-		mainWindow.add(main.head(),BorderLayout.NORTH);
-		mainWindow.add(main.body(),BorderLayout.CENTER);
-		mainWindow.add(main.base(),BorderLayout.SOUTH);
+		mainWindow.add(body.head(),BorderLayout.NORTH);
+		mainWindow.add(body.body(),BorderLayout.CENTER);
+		mainWindow.add(body.base(),BorderLayout.SOUTH);
 		
 		mainWindow.setVisible(true);
 	}
