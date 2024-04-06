@@ -49,8 +49,4 @@ public class DisplayPanel{
 		
 		return display;
 	}
-	
-//	public static void updateTimerLabel() {
-//		timerLabel.setText(Components.getWorkDuration().getValue() + " : " + String.format("%02d", 0));
-//	}
 }

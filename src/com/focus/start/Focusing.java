@@ -11,7 +11,6 @@ public class Focusing {
 
 	public static void main(String[] args) {
 		
-		SettingsPanel.settings();
 		MainBody body = new MainBody();
 
 		JFrame mainWindow = new JFrame();
@@ -22,9 +21,11 @@ public class Focusing {
 		mainWindow.setResizable(false);
 		mainWindow.setLocationRelativeTo(null);
 		
-		mainWindow.add(body.head(),BorderLayout.NORTH);
 		mainWindow.add(body.body(),BorderLayout.CENTER);
 		mainWindow.add(body.base(),BorderLayout.SOUTH);
+		mainWindow.add(body.head(),BorderLayout.NORTH);
+		
+		
 		
 		mainWindow.setVisible(true);
 	}

@@ -19,7 +19,7 @@ import com.focus.functions.ButtonFunctions;
 public class SettingsPanel {
 
 	public static JPanel settings() {
-		
+		System.out.println("Settings Called!");
 		JPanel settings = new JPanel();
 		settings.setLayout(new GridBagLayout());
 		settings.setPreferredSize(new Dimension(400, 600));
@@ -50,8 +50,8 @@ public class SettingsPanel {
 		JLabel roundValue = new JLabel("3");
 		
 		JSlider workDurationSlider = new JSlider(1, 30, 25);
-		workDurationSlider.addChangeListener(new ButtonFunctions(workDurationVal, workDurationSlider));
 		Components.setWorkDuration(workDurationSlider);
+		workDurationSlider.addChangeListener(new ButtonFunctions(workDurationVal, workDurationSlider));
 
 		
 		JSlider shortBreakSlider = new JSlider(1, 15, 5);

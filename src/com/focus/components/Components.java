@@ -1,11 +1,23 @@
 package com.focus.components;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
 
 public class Components {
 	private static JSlider workDuration, shortBreak, longBreak, rounds;
 	private static JLabel timerLabel;
+	private static JButton btn;
+	
+	
+
+	public static JButton getBtn() {
+		return btn;
+	}
+
+	public static void setBtn(JButton btn) {
+		Components.btn = btn;
+	}
 
 	public static JLabel getTimerLabel() {
 		return timerLabel;

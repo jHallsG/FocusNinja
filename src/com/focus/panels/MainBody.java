@@ -13,12 +13,14 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.focus.components.Components;
 import com.focus.functions.ButtonFunctions;
 
 public class MainBody {
 	
 	public MainBody(){
 		// Initialize the values from settings panel first before displaying them on display panel, otherwise it will result to null error.
+		System.out.println("MainBody constructor called");
 		SettingsPanel.settings();
 	}
 
@@ -35,7 +37,8 @@ public class MainBody {
 		JButton changeView = new JButton();
 		changeView.setIcon(btn);
 		changeView.setPreferredSize(new Dimension(30, 30));
-		changeView.addActionListener(new ButtonFunctions(cl, body(), "switch"));
+		Components.setBtn(changeView);
+		changeView.addActionListener(new ButtonFunctions(cl, body, "switch"));
 		
 
 		JLabel focus = new JLabel("Focus Ninja");
@@ -50,14 +53,11 @@ public class MainBody {
 	}
 
 	public JPanel body() {
-		
 		body.setLayout(cl);
 		
 		body.add(DisplayPanel.display(), "display");	
 		body.add(SettingsPanel.settings(), "settings");
-		
-		
-		
+	
 		return body;
 	}
 	
