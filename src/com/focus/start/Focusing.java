@@ -5,11 +5,13 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
 import com.focus.panels.MainBody;
+import com.focus.panels.SettingsPanel;
 
 public class Focusing {
 
 	public static void main(String[] args) {
 		
+		SettingsPanel.settings();
 		MainBody body = new MainBody();
 
 		JFrame mainWindow = new JFrame();

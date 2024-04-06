@@ -1,8 +1,12 @@
 package com.focus.functions;
 
 import java.awt.CardLayout;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -12,16 +16,21 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import com.focus.components.Components;
+import com.focus.panels.DisplayPanel;
 
-public class ButtonFunctions implements ActionListener, ChangeListener {
+public class ButtonFunctions implements ActionListener, ChangeListener, PropertyChangeListener {
 	
 	private JButton button;
 	private String type;
 	private boolean settingsActive = false;
 	private CardLayout cl;
 	private JPanel panel;
-	private JLabel value;
+	private JLabel value, label;
 	private JSlider slider , slider1, slider2, slider3, slider4;
+	
+	public ButtonFunctions(JLabel label) {
+		this.label = label;
+	}
 	
 	public ButtonFunctions(JLabel value, JSlider slider) {
 		this.slider = slider;
@@ -57,6 +66,7 @@ public class ButtonFunctions implements ActionListener, ChangeListener {
 				cl.show(panel,"settings");
 			} else {
 				settingsActive = false;
+				Components.getTimerLabel().setText(String.format("%02d",Components.getWorkDuration().getValue()) + " : " + String.format("%02d", 0));
 				cl.show(panel, "display");
 			}
 			break;
@@ -86,4 +96,11 @@ public class ButtonFunctions implements ActionListener, ChangeListener {
 		value.setText(String.format("%02d:00", slider.getValue()));
 	}
 
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		System.out.println(evt.getPropertyName());
+		
+		
+//		label.setText(String.format("%02d:00", Components.getWorkDuration().getValue()));
+	}
 }

@@ -16,17 +16,12 @@ import com.focus.functions.ButtonFunctions;
 public class DisplayPanel{
 	
 	
-	
 	public static JPanel display() {
-		
-		int workDuration = Components.getWorkDuration().getValue();
-		int longBreak = Components.getLongBreak().getValue();
-		int shortBreak = Components.getShortBreak().getValue();
-		
 		
 		JPanel display = new JPanel(new GridBagLayout());
 		
-		JLabel timerLabel = new JLabel(workDuration + " : " + String.format("%02d", 0));
+		JLabel timerLabel = new JLabel(String.format("%02d",Components.getWorkDuration().getValue()) + " : " + String.format("%02d", 0));
+		Components.setTimerLabel(timerLabel);
 		
 		GridBagConstraints gbc = new GridBagConstraints();
 			gbc.insets = new Insets(1,5,10,5);
@@ -45,10 +40,17 @@ public class DisplayPanel{
 		gbc.gridy++;
 		display.add(timerLabel,gbc);
 		gbc.gridy++;
+		
 		display.add(Box.createVerticalStrut(60),gbc);
 		gbc.gridy++;
 		display.add(playButton,gbc);
 		
+		
+		
 		return display;
 	}
+	
+//	public static void updateTimerLabel() {
+//		timerLabel.setText(Components.getWorkDuration().getValue() + " : " + String.format("%02d", 0));
+//	}
 }

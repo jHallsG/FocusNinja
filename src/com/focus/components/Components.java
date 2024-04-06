@@ -1,10 +1,19 @@
 package com.focus.components;
 
+import javax.swing.JLabel;
 import javax.swing.JSlider;
 
 public class Components {
 	private static JSlider workDuration, shortBreak, longBreak, rounds;
+	private static JLabel timerLabel;
 
+	public static JLabel getTimerLabel() {
+		return timerLabel;
+	}
+
+	public static void setTimerLabel(JLabel timerLabel) {
+		Components.timerLabel = timerLabel;
+	}
 
 	public static JSlider getWorkDuration() {
 		return workDuration;
@@ -37,5 +46,4 @@ public class Components {
 	public static void setRounds(JSlider rounds) {
 		Components.rounds = rounds;
 	}
-
 }

@@ -2,6 +2,7 @@ package com.focus.panels;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -52,8 +53,10 @@ public class MainBody {
 		
 		body.setLayout(cl);
 		
-		body.add(DisplayPanel.display(), "display");
+		body.add(DisplayPanel.display(), "display");	
 		body.add(SettingsPanel.settings(), "settings");
+		
+		
 		
 		return body;
 	}
