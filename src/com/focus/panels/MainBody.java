@@ -2,7 +2,6 @@ package com.focus.panels;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -15,13 +14,20 @@ import javax.swing.JPanel;
 
 import com.focus.components.Components;
 import com.focus.functions.ButtonFunctions;
+import com.focus.functions.TimerFunctions;
 
+/*
+ * This class contains the panels head, body and base.
+ * Head -- contains the "changeView" button that controls the swap between the Display panel and Settings panel
+ * Body -- contains the Display panel and Settings panel. This is  the swappable panel.
+ * Base -- no special components. Added it here so as the reset button won't be down at the bottom
+ */
 public class MainBody {
 	
 	public MainBody(){
 		// Initialize the values from settings panel first before displaying them on display panel, otherwise it will result to null error.
-		System.out.println("MainBody constructor called");
 		SettingsPanel.settings();
+
 	}
 
 	private static CardLayout cl = new CardLayout();

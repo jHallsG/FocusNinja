@@ -45,8 +45,6 @@ public class DisplayPanel{
 		gbc.gridy++;
 		display.add(playButton,gbc);
 		
-		
-		
 		return display;
 	}
 }

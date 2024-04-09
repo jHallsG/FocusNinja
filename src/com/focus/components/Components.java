@@ -4,13 +4,16 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
 
+/*
+ * This class contains the components that are accessed by the two classes, DisplayPanel and SettingsPanel.
+ * I could place them in their respective panels but I think better to have them in a centralized position.
+ */
+
 public class Components {
 	private static JSlider workDuration, shortBreak, longBreak, rounds;
 	private static JLabel timerLabel;
 	private static JButton btn;
 	
-	
-
 	public static JButton getBtn() {
 		return btn;
 	}

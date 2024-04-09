@@ -15,11 +15,11 @@ import javax.swing.JSlider;
 
 import com.focus.components.Components;
 import com.focus.functions.ButtonFunctions;
+import com.focus.functions.JSliderFunctions;
 
 public class SettingsPanel {
 
 	public static JPanel settings() {
-		System.out.println("Settings Called!");
 		JPanel settings = new JPanel();
 		settings.setLayout(new GridBagLayout());
 		settings.setPreferredSize(new Dimension(400, 600));
@@ -32,38 +32,38 @@ public class SettingsPanel {
 		JLabel workDuration = new JLabel("Work Duration");
 		workDuration.setFont(new Font("Verdana", Font.BOLD, 12));
 
-		JLabel workDurationVal = new JLabel("25:00");
+		JLabel workDurationVal = new JLabel("25 : 00");
 
 		JLabel shortBreak = new JLabel("Short Break");
 		shortBreak.setFont(new Font("Verdana", Font.BOLD, 12));
 
-		JLabel shortBreakVal = new JLabel("5:00");
+		JLabel shortBreakVal = new JLabel("05 : 00");
 
 		JLabel longBreak = new JLabel("Long Break");
 		longBreak.setFont(new Font("Verdana", Font.BOLD, 12));
 
-		JLabel longBreakVal = new JLabel("15:00");
+		JLabel longBreakVal = new JLabel("15 : 00");
 
 		JLabel round = new JLabel("Rounds");
 		round.setFont(new Font("Verdana", Font.BOLD, 12));
 
-		JLabel roundValue = new JLabel("3");
+		JLabel roundValue = new JLabel("03 : 00");
 		
 		JSlider workDurationSlider = new JSlider(1, 30, 25);
 		Components.setWorkDuration(workDurationSlider);
-		workDurationSlider.addChangeListener(new ButtonFunctions(workDurationVal, workDurationSlider));
+		workDurationSlider.addChangeListener(new JSliderFunctions(workDurationVal, workDurationSlider));
 
 		
 		JSlider shortBreakSlider = new JSlider(1, 15, 5);
-		shortBreakSlider.addChangeListener(new ButtonFunctions(shortBreakVal, shortBreakSlider));
+		shortBreakSlider.addChangeListener(new JSliderFunctions(shortBreakVal, shortBreakSlider));
 		Components.setShortBreak(shortBreakSlider);
 
 		JSlider longBreakSlider = new JSlider(1, 30, 15);
-		longBreakSlider.addChangeListener(new ButtonFunctions(longBreakVal, longBreakSlider));
+		longBreakSlider.addChangeListener(new JSliderFunctions(longBreakVal, longBreakSlider));
 		Components.setLongBreak(longBreakSlider);
 
 		JSlider roundsSlider = new JSlider(1, 10, 3);
-		roundsSlider.addChangeListener(new ButtonFunctions(roundValue, roundsSlider));
+		roundsSlider.addChangeListener(new JSliderFunctions(roundValue, roundsSlider));
 		Components.setRounds(roundsSlider);
 
 		JButton reset = new JButton("Reset");
