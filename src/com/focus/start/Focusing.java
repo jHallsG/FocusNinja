@@ -5,7 +5,7 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
 import com.focus.panels.MainBody;
-import com.focus.panels.SettingsPanel;
+
 
 public class Focusing {
 
@@ -30,4 +30,14 @@ public class Focusing {
 		mainWindow.setVisible(true);
 	}
 }
+
+
+
+/*
+ * Future Actions:
+ * 1. Add a checkbox for activating/deactivating mouse "kidnapper"
+ * 2. Refactor ButtonFunctions. Lots of duplicate codes
+ * 3. Maybe configurable sound after each timer ends
+ * 4. Add a background pic. App is plain Gray.
+ */
 

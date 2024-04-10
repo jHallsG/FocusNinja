@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
+
 import com.focus.components.Components;
 
 public class TimerFunctions extends Timer {

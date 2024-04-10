@@ -27,10 +27,10 @@ public class DisplayPanel{
 			gbc.insets = new Insets(1,5,10,5);
 			gbc.gridy = 0;
 			gbc.gridwidth = 3;
-			
 
 		JButton playButton = new JButton("Start");
 		playButton.addActionListener(new ButtonFunctions(playButton, "play"));
+		
 		
 
 		JProgressBar bar = new JProgressBar();
