@@ -1,5 +1,6 @@
 package com.focus.panels;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -34,7 +35,8 @@ public class DisplayPanel{
 		
 
 		JProgressBar bar = new JProgressBar();
-		bar.setValue(0);
+		bar.setForeground(Color.green);
+//		bar.setValue(Components.getWorkDuration().getValue());
 		
 		display.add(bar,gbc);
 		gbc.gridy++;

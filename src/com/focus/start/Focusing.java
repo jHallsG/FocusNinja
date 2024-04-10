@@ -39,5 +39,6 @@ public class Focusing {
  * 2. Refactor ButtonFunctions. Lots of duplicate codes
  * 3. Maybe configurable sound after each timer ends
  * 4. Add a background pic. App is plain Gray.
+ * 5. Add progress bar functionality
  */
 
