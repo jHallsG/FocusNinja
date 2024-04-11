@@ -2,7 +2,8 @@ Welcome to the FocusNinja App! This app is a desktop time management tool that h
 typically 25 minutes of focused work followed by a 5-minute break. This technique is known as the Pomodoro Technique. The app provides you with a 
 timer to manage your work and break intervals, keeping you on track and focused.
 
-#Features
+Features
+
 Customizable Timers: Set custom work and break durations to fit your preferences.
 Notifications: Get alerted when it's time to work or take a break.
 Mouse 'Kidnapper': Seeing yourself getting sidetracked during breaks? Be it watching a short movie or reading an article or playing a game 
