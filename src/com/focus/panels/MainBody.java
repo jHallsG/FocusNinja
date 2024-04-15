@@ -36,9 +36,10 @@ public class MainBody {
 	public JPanel head() {
 		
 		JPanel head = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 15));
+		head.setOpaque(false);
 		head.setPreferredSize(new Dimension(Integer.MAX_VALUE, 50));
 
-		ImageIcon btn = new ImageIcon("Images/shuriken.png");
+		ImageIcon btn = new ImageIcon("Extra/shuriken.png");
 
 		JButton changeView = new JButton();
 		changeView.setIcon(btn);
@@ -60,6 +61,7 @@ public class MainBody {
 
 	public JPanel body() {
 		body.setLayout(cl);
+		body.setOpaque(false);
 		
 		body.add(DisplayPanel.display(), "display");	
 		body.add(SettingsPanel.settings(), "settings");

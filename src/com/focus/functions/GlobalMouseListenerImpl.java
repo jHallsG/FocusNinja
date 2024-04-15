@@ -8,12 +8,22 @@ import com.github.kwhat.jnativehook.NativeHookException;
 import com.github.kwhat.jnativehook.mouse.NativeMouseEvent;
 import com.github.kwhat.jnativehook.mouse.NativeMouseMotionListener;
 
+/*
+ * The class used for 'kidnapping' the mouse
+ */
 public class GlobalMouseListenerImpl{
-	
+	/*
+	 * The class used for controlling mouse location
+	 */
 	private static Robot robot;
+	/*
+	 * Class implements the NativeMouseMotionListener
+	 */
 	private static MyMouseListener mouseListener = new MyMouseListener();
 	
-	
+	/*
+	 * Instantiates the robot class. registerNativeHook enables/disables the mouse listener
+	 */
 	public GlobalMouseListenerImpl() {
 		try {
 			GlobalScreen.registerNativeHook();
@@ -30,14 +40,16 @@ public class GlobalMouseListenerImpl{
 	
 	public  void runGlobalMouseListener(){
 		GlobalScreen.addNativeMouseMotionListener(mouseListener);
-        System.out.println("Global MouseListener called!");
 	}
 	
 	public void disableGlobalMouseListener() {
 		GlobalScreen.removeNativeMouseMotionListener(mouseListener);
-		System.out.println("Global MouseListener deactivated!");
 	}
 	
+	/*
+	 * Sub-class that tells what the mouse listener should do whenever it detects movement.
+	 * Robot would take over mouse movement and move it at the corner of the screen
+	 */
 	private static class MyMouseListener implements NativeMouseMotionListener{
 
 		 @Override

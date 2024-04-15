@@ -23,6 +23,7 @@ public class SettingsPanel {
 		JPanel settings = new JPanel();
 		settings.setLayout(new GridBagLayout());
 		settings.setPreferredSize(new Dimension(400, 600));
+		settings.setOpaque(false);
 
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.insets = new Insets(1, 5, 10, 5);

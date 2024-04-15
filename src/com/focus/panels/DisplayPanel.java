@@ -20,6 +20,7 @@ public class DisplayPanel{
 	public static JPanel display() {
 		
 		JPanel display = new JPanel(new GridBagLayout());
+		display.setOpaque(false);
 		
 		JLabel timerLabel = new JLabel(String.format("%02d",Components.getWorkDuration().getValue()) + " : " + String.format("%02d", 0));
 		Components.setTimerLabel(timerLabel);
@@ -36,6 +37,7 @@ public class DisplayPanel{
 
 		JProgressBar bar = new JProgressBar();
 		bar.setForeground(Color.green);
+		Components.setBar(bar);
 //		bar.setValue(Components.getWorkDuration().getValue());
 		
 		display.add(bar,gbc);

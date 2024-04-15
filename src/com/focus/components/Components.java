@@ -2,6 +2,7 @@ package com.focus.components;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JProgressBar;
 import javax.swing.JSlider;
 
 /*
@@ -13,6 +14,16 @@ public class Components {
 	private static JSlider workDuration, shortBreak, longBreak, rounds;
 	private static JLabel timerLabel;
 	private static JButton btn;
+	private static JProgressBar bar;
+	
+	public static JProgressBar getBar() {
+		return bar;
+	}
+
+	public static void setBar(JProgressBar bar) {
+		Components.bar = bar;
+	}
+	
 	
 	public static JButton getBtn() {
 		return btn;
