@@ -41,7 +41,7 @@ public class ButtonFunctions implements ActionListener {
 	 * Seconds set at 0. If a Work Duration is set for 25 minutes, the timer would automatically decrement and start at 24:59 instead of 25:59
 	 * currentRounds checks against the rounds slider
 	 */
-	private static int seconds = 0, rounds, currentRounds = 0, maxBarValue;
+	private static int seconds = 0, rounds = 3, currentRounds = 0, maxBarValue;
 	private Timer workTimer, shortBreakTimer, longBreakTimer;
 	/*
 	 * Timer values set at default, 5 mins for short break, 25 minutes for work, and 15 mins for long break
@@ -162,7 +162,7 @@ public class ButtonFunctions implements ActionListener {
 					updateTimerLabel(workDuration);
 				} else if (workDuration > 0 && seconds == 0) {
 					workDuration--;
-					seconds = 59;
+					seconds = 5;
 					updateTimerLabel(workDuration);
 				} else if (workDuration == 0 && seconds == 0) {
 					playSound();
@@ -172,7 +172,7 @@ public class ButtonFunctions implements ActionListener {
 					
 					JOptionPane.showMessageDialog(null, "Time's UP! Time to RELAX!", "Timeout",
 							JOptionPane.INFORMATION_MESSAGE);
-					//globalMouseListener.runGlobalMouseListener();
+					globalMouseListener.runGlobalMouseListener();
 					
 					if (currentRounds < rounds - 1) {
 						shortRun = true;
@@ -198,7 +198,7 @@ public class ButtonFunctions implements ActionListener {
 					updateTimerLabel(shortBreak);
 				} else if (shortBreak > 0 && seconds == 0) {
 					shortBreak--;
-					seconds = 59;
+					seconds = 5;
 					updateTimerLabel(shortBreak);
 				} else if (shortBreak == 0 && seconds == 0) {
 					playSound();
@@ -229,7 +229,7 @@ public class ButtonFunctions implements ActionListener {
 					updateTimerLabel(longBreak);
 				} else if (longBreak > 0 && seconds == 0) {
 					longBreak--;
-					seconds = 59;
+					seconds = 5;
 					updateTimerLabel(longBreak);
 				} else if (longBreak == 0 && seconds == 0) {
 					playSound();
